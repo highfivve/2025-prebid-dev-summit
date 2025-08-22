@@ -1,0 +1,9 @@
+# Ignore git and IDE files
+.git
+.gitignore
+*.iml
+.idea/
+.vscode/
+node_modules/
+.DS_Store
+

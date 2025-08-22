@@ -1,0 +1,321 @@
+meta {
+  name: Ortb2 Requests
+  type: http
+  seq: 1
+}
+
+post {
+  url: http://127.0.0.1:8080/auction.php
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "imp": [
+      {
+        "ext": {
+          "data": {
+            "divId": "sk_floorad",
+            "placement": "floorad",
+            "adg_rtd": {
+              "adunit_position": "514x1328"
+            },
+            "adserver": {
+              "name": "gam",
+              "adslot": "/33559401,4953889/speisekarte/sk_floorad/desktop/speisekarte.de"
+            },
+            "pbadslot": "/33559401,4953889/speisekarte/sk_floorad/desktop/speisekarte.de"
+          },
+          "prebid": {
+            "storedrequest": {
+              "id": "sk_floorad"
+            },
+            "adunitcode": "sk_floorad",
+            "floors": {
+              "floorMin": 3
+            }
+          },
+          "tid": "ab183dcd-da7e-49f5-a1d6-d1e93f1878ba",
+          "gpid": "/33559401,4953889/speisekarte/sk_floorad/desktop/speisekarte.de"
+        },
+        "banner": {
+          "topframe": 1,
+          "format": [
+            {
+              "w": 1,
+              "h": 1
+            },
+            {
+              "w": 728,
+              "h": 90
+            },
+            {
+              "w": 800,
+              "h": 250
+            },
+            {
+              "w": 900,
+              "h": 90
+            },
+            {
+              "w": 970,
+              "h": 80
+            },
+            {
+              "w": 970,
+              "h": 90
+            },
+            {
+              "w": 970,
+              "h": 250
+            }
+          ],
+          "pos": 1
+        },
+        "id": "sk_floorad",
+        "secure": 1,
+        "bidfloor": 3,
+        "bidfloorcur": "EUR"
+      }
+    ],
+    "source": {
+      "tid": "3d2cae41-c869-445d-ab71-eff2eaa0cb9b"
+    },
+    "site": {
+      "domain": "speisekarte.de",
+      "publisher": {
+        "domain": "speisekarte.de",
+        "id": "speisekarte"
+      },
+      "page": "https://www.speisekarte.de/",
+      "cat": [],
+      "sectioncat": [],
+      "pagecat": [],
+      "ext": {
+        "data": {
+          "pagetype": "default",
+          "documentLang": "de",
+          "adg_rtd": {
+            "uid": "a8f6277e-a591-4964-bb9f-ddfb9f0e5763",
+            "pageviewId": "93aac0b2-047a-428a-83e0-08e7ba335f4c",
+            "features": {
+              "page_dimensions": "1027x3796",
+              "viewport_dimensions": "1027x1328",
+              "user_timestamp": "1755179786",
+              "dom_loading": "64"
+            },
+            "session": {
+              "rnd": 0.48037285884189795,
+              "pages": 3,
+              "new": false,
+              "vwSmplg": 0.05,
+              "vwSmplgNxt": 0.05,
+              "expiry": 1755174353246,
+              "lastActivityTime": 1755172553246,
+              "id": "4f717128-df80-4e27-9c11-df155c528ff6"
+            }
+          }
+        }
+      },
+      "content": {
+        "data": []
+      }
+    },
+    "regs": {
+      "ext": {
+        "gdpr": 1
+      }
+    },
+    "user": {
+      "ext": {
+        "consent": "CQWImzAQWImzAAfHcBDEB3FsAP_gAEPgAAigKRtR9G_fbWFDOTp3YPskaYQH19hp5sQgAgaBE2AFyDOA8IQEg2EwMAyAICACABAAoBRBIQAkDAhEAUCAAIgFISDMIACAgAAKIAAEAAMQA0AAAAgIAAAgEAAYhEBNIxAAmBqBYZrsRcAggIAAAgAgAAABAIABAAMBCEE4QAAAAAIAQoAAggIAEAIAAAECABAIAAAAAAAAAAIAAAAAAAAAAAAABAAAAIKEAAkGhUAQFEAAhEIGEECAAQVhABQIAgAASBAgAASBAA4AQAEWEyAAAAAAAAAAAAgAABAAAIAAhEAEABAIAAIAAoAAAAAAAIAAAAACAAQgAAAAgIAAAgAAAAAABEIBAAgCgAIBACQUAAAAAgAgAAAAAAAIAAAAAAEAAoAAAAACAAAgAAgAIAEAIAAAAAAAAIEAAAAQAAAAAAAAAAAAAAAAAABAAA",
+        "eids": [
+          {
+            "source": "criteo.com",
+            "uids": [
+              {
+                "id": "0Gl7T190VCUyRjZCVU9zZ2FlcWszQkY0JTJCRHpZZjBoQzJzMVR3SkRua01xbDRuZFVsbnVoT01yejhiZmEwOFFJaiUyRmcxQmpmbkdBOE5aUWk3UHFQaiUyRllsSjdPZUFOZXg0aCUyQnhnVVVMQzg3UW8lMkIxR0sxdCUyQk1NTG1VU3pGWWtaJTJCTDc2V1owNng",
+                "atype": 1
+              }
+            ]
+          },
+          {
+            "source": "id5-sync.com",
+            "uids": [
+              {
+                "id": "ID5*DEtAnIBn2MMF3c4GUqBejFZ7x77lgOkocWJwpm3RFB89gFDOZM1DbdnM-mg0bXFiPYPwNqOJLuiHpKE6aHz16D2EApC0JpfL-btwT_DOmLc9heh1Mfo8OxtL-VbtNYBnPoaqIWcq0O1nB0Gm72GNpT2GgMRigFuXP0ukq0dn4v49hzIFr7voBGN1rqdOat-GPYh0Vo_L-73YxNPU-lRAuD2KhYMmGviPNHKw92AiXHM9jY_cSKsRgPkffSx1YwxGPY8KTxer_eJItLstWQGk0D2Qr5GETR4hl7rEcYlc4bc9kwebdi6vyDbDjM-xG96tPVRtGLUa3-tvLBijfyEpDD2Y1-HlTocGKghRmpPyiyg_WaQ-Y1JTatyfE2oxvBhmPVoQpBD4ivWLeVeG6yIuyD1bes-3ObGzKtyECEKY7VM9XFYNKXxB1gQ0OaCtnh8GPZ6-e30jmFACrsTa0XpVmz2fXOLjRbPdH16sc7BSaC49ZBBUBzQts5FnmnaeoF8-PWhcS22u2LYBfetTVu6YKT1pRC0zsMbd_Fo1m-5yK-Y9azP-6XGe3WnTfKQvPrwyPW3bADoa2i7fheNovO5UPj2ta7MpN1MCRXgWWI3Q5KA9rr7mMgWJbvYzNYJ0mR-jPXlRKr_nNZeEVGPAZsPibz16WnjtyekIEoOHyulLOEI9fJdvrTnRH3MbfWxCixyvPX1lVsTKUdhAqqbd4Cb31T1-sAh83tsbQmlcXakCxXQ",
+                "atype": 1,
+                "ext": {
+                  "linkType": 2,
+                  "pba": "Pb58XZubBHf8yKeE9zQheo+7W51/6OepXWPVrEsYvT/49GwXZPzpsLweh2J7DP/k"
+                }
+              }
+            ]
+          },
+          {
+            "source": "pubcid.org",
+            "uids": [
+              {
+                "id": "a92b7a59-3ed0-4473-b4a3-6387d442180e",
+                "atype": 1
+              }
+            ]
+          }
+        ],
+        "ConsentedProvidersSettings": {
+          "consented_providers": "2~3218.236.1232.1514.1375.1342.70.1863.314.7.2238.1317.2069.874.3186.3186.1573.3126.1703.1896.1669.1097.2941.9731.2320.1022.797.1329.2881.1426.1782.1998.1444.2016.229.229.241.3001.2213.1674.1799.2745.723.2568.313.326.2376.1250.1065.1344.1859.2778.1025.3163.1902.1126.1127.445.449.459.216.2567.469.1047.486.2631.494.1626.1170.510.991.2776.981.3107.584.3033~dv."
+        }
+      }
+    },
+    "ext": {
+      "prebid": {
+        "auctiontimestamp": 1755172586220,
+        "targeting": {
+          "includewinners": true,
+          "includebidderkeys": false
+        },
+        "adServerCurrency": "EUR",
+        "aliases": {},
+        "analytics": {
+          "h5v": {
+            "moliVersion": "5.4.7",
+            "configVersion": 35,
+            "configLabel": "production"
+          }
+        },
+        "returnallbidstatus": true,
+        "bidderconfig": [
+          {
+            "bidders": [
+              "criteo"
+            ],
+            "config": {
+              "ortb2": {
+                "site": {
+                  "publisher": {
+                    "id": "102971"
+                  }
+                }
+              }
+            }
+          },
+          {
+            "bidders": [
+              "pubmatic"
+            ],
+            "config": {
+              "ortb2": {}
+            }
+          },
+          {
+            "bidders": [
+              "appnexus"
+            ],
+            "config": {
+              "ortb2": {}
+            }
+          },
+          {
+            "bidders": [
+              "teads"
+            ],
+            "config": {
+              "ortb2": {}
+            }
+          },
+          {
+            "bidders": [
+              "rubicon"
+            ],
+            "config": {
+              "ortb2": {}
+            }
+          }
+        ],
+        "schains": [
+          {
+            "bidders": [
+              "improvedigital",
+              "stroeerCore",
+              "adf",
+              "onetag",
+              "visx",
+              "cwire",
+              "connectad"
+            ],
+            "schain": {
+              "ver": "1.0",
+              "complete": 1,
+              "nodes": [
+                {
+                  "hp": 1,
+                  "asi": "highfivve.com",
+                  "sid": "2002"
+                }
+              ]
+            }
+          }
+        ],
+        "channel": {
+          "name": "pbjs",
+          "version": "v9.50.0"
+        },
+        "floors": {
+          "enabled": false,
+          "floorMin": 3,
+          "floorMinCur": "EUR"
+        }
+      },
+      "tmaxmax": 2200
+    },
+    "device": {
+      "w": 2560,
+      "h": 1440,
+      "dnt": 0,
+      "ua": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36",
+      "language": "de",
+      "ext": {
+        "vpw": 1027,
+        "vph": 1328
+      },
+      "sua": {
+        "source": 1,
+        "platform": {
+          "brand": "macOS"
+        },
+        "browsers": [
+          {
+            "brand": "Not)A;Brand",
+            "version": [
+              "8"
+            ]
+          },
+          {
+            "brand": "Chromium",
+            "version": [
+              "138"
+            ]
+          },
+          {
+            "brand": "Google Chrome",
+            "version": [
+              "138"
+            ]
+          }
+        ],
+        "mobile": 0
+      }
+    },
+    "id": "1c19beb8-9537-4d63-b53a-0ccbac82c9b4",
+    "test": 0,
+    "cur": [
+      "EUR"
+    ],
+    "tmax": 2000
+  }
+}
+
+settings {
+  encodeUrl: true
+}
