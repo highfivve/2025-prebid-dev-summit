@@ -32,12 +32,22 @@ Then open with IntelliJ, VSCode, Cursor, Kiro or whatever IDE you prefer that su
 
 ## Build our bid adapter
 
+See [mukiBidAdapter](mukiBidApater.ts) for the code.
+
 ## Build our own prebid distribution
 
 ```bash
 gulp build --modules=mukiBidAdapter,currency,gptPreAuction,priceFloors
 gulp bundle --tag devsummit --modules=mukiBidAdapter,currency,gptPreAuction,priceFloors
-``
+```
+
+## Use Chrome Dev Tools network override to hijack prebid.js
+
+See https://developer.chrome.com/blog/devtools-tips-34
+
+## Replace the prebid.js distribution in the config
+
+The custom distribution can be found here: https://frag-muki.de/ortb2/prebid.devsummit.js
 
 # Credits
 

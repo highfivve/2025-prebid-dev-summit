@@ -148,11 +148,14 @@ foreach ($impList as $imp) {
     if (!$foundCreative) continue;
     $img = $foundCreative;
 
+    // Set adm in a separate variable
+    $adm = '<a href="https://frag-muki.de" target="_blank"><img src="' . $img['url'] . '" width="' . $img['w'] . '" height="' . $img['h'] . '" alt="Muki Ad"></a>';
+
     $bid = new Bid();
     $bid->set('id', $imp->get('id'));
     $bid->set('impid', $imp->get('id'));
     $bid->set('price', mt_rand(500, 2000) / 100); // random float 5-20
-    $bid->set('adm', '<a href="https://frag-muki.de" target="_blank"><img src="' . $img['url'] . '" width="' . $img['w'] . '" height="' . $img['h'] . '" alt="Muki Ad"></a>');
+    $bid->set('adm', $adm);
     $bid->set('iurl', $img['url']);
     $bid->set('adomain', ['frag-muki.de']);
     $bid->set('w', $img['w']);
@@ -160,7 +163,7 @@ foreach ($impList as $imp) {
     $bid->set('cat', ['1', '30']);
     $bid->set('mtype', 1);
     $bid->set('cid', 'aabbcc');
-    $bid->set('crid', 'bsacebsx');
+    $bid->set('crid', md5($adm));
 
     $seatBid = new SeatBid();
     $seatBid->set('bid', [$bid]);
