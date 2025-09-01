@@ -78,12 +78,20 @@ try {
     exit;
 }
 
-// Example image creatives with size and url
+// Example creatives with size and file
 $imageCreatives = [
-    [ 'w' => 300, 'h' => 250, 'url' => 'https://picsum.photos/id/1015/300/250' ],
-    [ 'w' => 320, 'h' => 100, 'url' => 'https://picsum.photos/id/1025/320/100' ],
-    [ 'w' => 320, 'h' => 50,  'url' => 'https://picsum.photos/id/1035/320/50'  ],
-    [ 'w' => 728, 'h' => 90,  'url' => 'https://picsum.photos/id/1045/728/90'  ],
+    [ 'w' => 300, 'h' => 250, 'file' => 'creative_300x250.html' ],
+    [ 'w' => 300, 'h' => 250, 'file' => 'creative_300x250_bike.html' ],
+    [ 'w' => 300, 'h' => 250, 'file' => 'creative_300x250_knight.html' ],
+    [ 'w' => 300, 'h' => 250, 'file' => 'creative_300x250_thinking.html' ],
+    [ 'w' => 300, 'h' => 600, 'file' => 'creative_300x600.html' ],
+    [ 'w' => 300, 'h' => 600, 'file' => 'creative_300x600_prebid.html' ],
+    [ 'w' => 300, 'h' => 600, 'file' => 'creative_300x600_prebid2.html' ],
+    [ 'w' => 320, 'h' => 100, 'file' => 'creative_320x100.html' ],
+    [ 'w' => 320, 'h' => 50,  'file' => 'creative_320x50.html'  ],
+    [ 'w' => 728, 'h' => 90,  'file' => 'creative_728x90.html'  ],
+    [ 'w' => 800, 'h' => 250, 'file' => 'creative_800x250.html' ],
+    [ 'w' => 900, 'h' => 250, 'file' => 'creative_900x250.html' ],
 ];
 
 // UUIDv4 generator compatible with all PHP
@@ -110,6 +118,8 @@ $impList = $bidRequest->get('imp');
 if (!is_array($impList)) $impList = [];
 
 foreach ($impList as $imp) {
+    // Shuffle creatives for random selection among same-size options
+    shuffle($imageCreatives);
     $foundCreative = null;
     $w = null;
     $h = null;
@@ -148,15 +158,15 @@ foreach ($impList as $imp) {
     if (!$foundCreative) continue;
     $img = $foundCreative;
 
-    // Set adm in a separate variable
-    $adm = '<a href="https://frag-muki.de" target="_blank"><img src="' . $img['url'] . '" width="' . $img['w'] . '" height="' . $img['h'] . '" alt="Muki Ad"></a>';
+    // Load creative HTML from file
+    $creativePath = __DIR__ . '/creatives/' . $img['file'];
+    $adm = file_exists($creativePath) ? file_get_contents($creativePath) : '<!-- Creative not found -->';
 
     $bid = new Bid();
     $bid->set('id', $imp->get('id'));
     $bid->set('impid', $imp->get('id'));
     $bid->set('price', mt_rand(500, 2000) / 100); // random float 5-20
     $bid->set('adm', $adm);
-    $bid->set('iurl', $img['url']);
     $bid->set('adomain', ['frag-muki.de']);
     $bid->set('w', $img['w']);
     $bid->set('h', $img['h']);

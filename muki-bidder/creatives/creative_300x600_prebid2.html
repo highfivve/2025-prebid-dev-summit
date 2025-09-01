@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=300, initial-scale=1.0">
+    <title>Muki Ad 300x600 Prebid</title>
+    <style>
+        .muki-300x600-prebid-bg {
+            position: relative;
+            width: 300px;
+            height: 600px;
+            background: url('https://frag-muki.de/ortb2/creatives/assets/muki_thinking.jpg') bottom center/100% no-repeat #222;
+            overflow: hidden;
+            animation: muki-pulse-bg 1.5s infinite alternate;
+        }
+        @keyframes muki-pulse-bg {
+            0% {
+                background-size: 100%;
+                filter: brightness(1) saturate(1);
+            }
+            100% {
+                background-size: 115%;
+                filter: brightness(1.15) saturate(1.3);
+            }
+        }
+        .muki-prebid-btn {
+            position: absolute;
+            left: 16px;
+            top: 16px;
+            background: transparent;
+            color: #fff;
+            padding: 12px 28px;
+            font-family: inherit;
+            font-size: 24px;
+            font-weight: bold;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background 0.2s;
+        }
+        .muki-prebid-btn:hover {
+            background: #222;
+        }
+    </style>
+</head>
+<body>
+
+<a href="https://www.prebidsummit.org/prebid-ascent-germany-developers-conference-september-16-2025" target="_blank" style="text-decoration:none;">
+    <div class="muki-300x600-prebid-bg">
+        <span class="muki-prebid-btn">prebid summit</span>
+    </div>
+</a>
+
+</body>
+</html>
+
