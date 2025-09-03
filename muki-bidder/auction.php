@@ -87,6 +87,13 @@ $imageCreatives = [
     [ 'w' => 300, 'h' => 600, 'file' => 'creative_300x600.html' ],
     [ 'w' => 300, 'h' => 600, 'file' => 'creative_300x600_prebid.html' ],
     [ 'w' => 300, 'h' => 600, 'file' => 'creative_300x600_prebid2.html' ],
+    [ 'w' => 160, 'h' => 600, 'file' => 'creative_160x600.html' ],
+    [ 'w' => 160, 'h' => 600, 'file' => 'creative_160x600_prebid.html' ],
+    [ 'w' => 160, 'h' => 600, 'file' => 'creative_160x600_prebid2.html' ],
+    # TODO those look pretty shitty
+  #  [ 'w' => 120, 'h' => 600, 'file' => 'creative_120x600.html' ],
+  #  [ 'w' => 120, 'h' => 600, 'file' => 'creative_120x600_prebid.html' ],
+  #  [ 'w' => 120, 'h' => 600, 'file' => 'creative_120x600_prebid2.html' ],
     [ 'w' => 320, 'h' => 100, 'file' => 'creative_320x100.html' ],
     [ 'w' => 320, 'h' => 50,  'file' => 'creative_320x50.html'  ],
     [ 'w' => 728, 'h' => 90,  'file' => 'creative_728x90.html'  ],
