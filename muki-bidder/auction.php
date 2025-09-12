@@ -125,12 +125,9 @@ $impList = $bidRequest->get('imp');
 if (!is_array($impList)) $impList = [];
 
 foreach ($impList as $imp) {
-    // Shuffle creatives for random selection among same-size options
-    shuffle($imageCreatives);
-    $foundCreative = null;
+    $matchingCreatives = [];
     $w = null;
     $h = null;
-    // Check for banner.format sizes
     $banner = $imp->get('banner');
     if ($banner && is_object($banner) && $banner->get('format')) {
         $formats = $banner->get('format');
@@ -139,36 +136,45 @@ foreach ($impList as $imp) {
             $fh = $format->get('h');
             foreach ($imageCreatives as $img) {
                 if ($img['w'] == $fw && $img['h'] == $fh) {
-                    $foundCreative = $img;
-                    $w = $fw;
-                    $h = $fh;
-                    break 2; // stop at first match
+                    $matchingCreatives[] = $img;
                 }
             }
         }
     }
     // fallback: check imp.w/h or banner.w/h
-    if (!$foundCreative) {
+    if (empty($matchingCreatives)) {
         $w = $imp->get('w');
         $h = $imp->get('h');
-        if ((!$w || !$h) && $banner) {
-            $w = $banner->get('w');
-            $h = $banner->get('h');
+        if (!$w || !$h) {
+            if ($banner && is_object($banner)) {
+                $w = $banner->get('w');
+                $h = $banner->get('h');
+            }
         }
         foreach ($imageCreatives as $img) {
             if ($img['w'] == $w && $img['h'] == $h) {
-                $foundCreative = $img;
-                break;
+                $matchingCreatives[] = $img;
             }
         }
     }
-    if (!$foundCreative) continue;
-    $img = $foundCreative;
-
+    if (empty($matchingCreatives)) continue;
+    // Find the largest area
+    $maxArea = 0;
+    foreach ($matchingCreatives as $img) {
+        $area = $img['w'] * $img['h'];
+        if ($area > $maxArea) $maxArea = $area;
+    }
+    // Filter to only creatives with the largest area
+    $largestCreatives = array_filter($matchingCreatives, function($img) use ($maxArea) {
+        return $img['w'] * $img['h'] === $maxArea;
+    });
+    // Shuffle and pick one
+    $largestCreatives = array_values($largestCreatives);
+    shuffle($largestCreatives);
+    $img = $largestCreatives[0];
     // Load creative HTML from file
     $creativePath = __DIR__ . '/creatives/' . $img['file'];
     $adm = file_exists($creativePath) ? file_get_contents($creativePath) : '<!-- Creative not found -->';
-
     $bid = new Bid();
     $bid->set('id', $imp->get('id'));
     $bid->set('impid', $imp->get('id'));
